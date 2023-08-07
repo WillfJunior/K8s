@@ -1,0 +1,12 @@
+# ClusterIP - Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: serverk8s-service
+spec:
+  selector:
+    app: serverk8s
+  ports:
+  - name: serverk8s-service
+    port: 3000 # Porta do service - TargetPort porta do container
+    protocol: TCP

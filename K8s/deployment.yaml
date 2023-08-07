@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: serverk8s
+spec:
+  replicas: 5 #cria a quantidade de replicar do pod
+  selector:
+    matchLabels:
+      app: serverk8s
+  template:
+    metadata:
+      labels:
+        app: serverk8s
+    spec:
+      containers:
+      - name: serverk8s
+        image: willfjr86/serverk8s
+        ports:
+        - containerPort: 8000

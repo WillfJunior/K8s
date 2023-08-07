@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod #tipo de objeto a ser criado
+metadata:
+  name: serverk8s
+  labels:
+    name: serverk8s
+spec:
+  containers:
+  - name: serverk8s
+    image: willfjr86/serverk8s
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 8080
